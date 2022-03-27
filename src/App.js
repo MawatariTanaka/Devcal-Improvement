@@ -1,13 +1,23 @@
-import './bundles/css/bootstrap.min.css';
-import './bundles/css/responsive.css';
+import logo from './logo.svg';
 import './App.css';
-import './Header/Header.module.css';
-import Header from './Header/Header';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
