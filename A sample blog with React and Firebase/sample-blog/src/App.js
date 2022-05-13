@@ -21,16 +21,21 @@ function App() {
         <Router className="App">
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/create-post">Create</Link>
                 {!isAuth ? (
                     <Link to="/login">Login</Link>
                 ) : (
-                    <button onClick={signUserOut}>Log out</button>
+                    <>
+                        <Link to="/create-post">Create</Link>
+                        <button onClick={signUserOut}>Log out</button>
+                    </>
                 )}
             </nav>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/create-post" element={<CreatePost />} />
+                <Route
+                    path="/create-post"
+                    element={<CreatePost isAuth={isAuth} />}
+                />
                 <Route
                     path="/login"
                     element={<Login setIsAuth={setIsAuth} />}
